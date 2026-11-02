@@ -1,3 +1,4 @@
+import { QRCodeSVG } from "qrcode.react";
 import { useCallback, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api } from "../api";
@@ -58,6 +59,16 @@ export default function Order() {
 
         <div className="code-block">
           <span className="eyebrow">Pickup code</span>
+          {(isActive || order.order_status === "READY_FOR_PICKUP") && (
+            <QRCodeSVG
+              className="pickup-qr"
+              value={order.pickup_code}
+              size={168}
+              level="M"
+              marginSize={4}
+              title={`QR for pickup code ${order.pickup_code}`}
+            />
+          )}
           <strong className="pickup-code">{order.pickup_code}</strong>
           <p className="headline">{headline(order)}</p>
           {isActive && order.delay_minutes > 0 && (

@@ -1,12 +1,6 @@
 {
   "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "https://smartqueue-api-hg5q.onrender.com/:path*"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/api/:path*", "destination": "https://YOUR-BACKEND.vercel.app/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

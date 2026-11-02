@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { api } from "../api";
+import QrScan from "../components/QrScan";
 import { Loading, Tabs } from "../components/ui";
 import { clock } from "../format";
 import { useLive } from "../useLive";
@@ -139,22 +140,39 @@ function KitchenTicket({ order, onMove }) {
 
 function PickupForm({ onDone }) {
   const [code, setCode] = useState("");
+  const [scanning, setScanning] = useState(false);
   const [message, setMessage] = useState(null);
 
-  async function submit(event) {
+  const handOver = useCallback(
+    async (pickupCode) => {
+      setScanning(false);
+      try {
+        const order = await api("/kitchen/pickup", { method: "POST", body: { pickup_code: pickupCode } });
+        setMessage({ ok: true, text: `#${order.order_id} handed to ${order.full_name}` });
+        setCode("");
+        onDone();
+      } catch (err) {
+        setMessage({ ok: false, text: err.message });
+      }
+    },
+    [onDone],
+  );
+
+  function submit(event) {
     event.preventDefault();
-    try {
-      const order = await api("/kitchen/pickup", { method: "POST", body: { pickup_code: code } });
-      setMessage({ ok: true, text: `#${order.order_id} handed to ${order.full_name}` });
-      setCode("");
-      onDone();
-    } catch (err) {
-      setMessage({ ok: false, text: err.message });
-    }
+    handOver(code);
+  }
+
+  function toggleScanner() {
+    setMessage(null);
+    setScanning(!scanning);
   }
 
   return (
     <form className="pickup-form" onSubmit={submit}>
+      <button type="button" className="button ghost" onClick={toggleScanner}>
+        {scanning ? "Stop scanning" : "Scan QR"}
+      </button>
       <input
         className="mono"
         value={code}
@@ -167,6 +185,7 @@ function PickupForm({ onDone }) {
         Hand over
       </button>
       {message && <span className={message.ok ? "ok-text" : "error"}>{message.text}</span>}
+      {scanning && <QrScan onScan={handOver} />}
     </form>
   );
 }
