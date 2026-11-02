@@ -5,7 +5,14 @@ from psycopg_pool import ConnectionPool
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://smartqueue:smartqueue@localhost:5433/smartqueue")
 
-pool = ConnectionPool(DATABASE_URL, kwargs={"row_factory": dict_row}, open=False)
+pool = ConnectionPool(
+    DATABASE_URL,
+    min_size=1,
+    max_size=3,
+    check=ConnectionPool.check_connection,
+    kwargs={"row_factory": dict_row, "prepare_threshold": None},
+    open=False,
+)
 
 
 def query(sql, params=None):
