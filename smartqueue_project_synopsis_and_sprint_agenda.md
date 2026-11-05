@@ -1,4 +1,4 @@
-# SmartQueue: Predictive Pre-Ordering & Queue-Management DBMS
+# CampusBite: Predictive Pre-Ordering & Queue-Management DBMS
 **Document Version:** 1.0.0  
 **Project Track:** Database Management Systems (DBMS) Laboratory / Capstone  
 **Target Domain:** Campus Cafeteria & Fast-Casual Retail Optimization  
@@ -14,7 +14,7 @@ University cafeterias and high-traffic food kiosks face severe demand spikes dur
 3. **Concurrency & Overselling:** Multiple simultaneous orders placed during rush intervals lead to phantom stock deductions, negative inventory states, and operational chaos in the kitchen.
 
 ### 1.2 Proposed Solution
-**SmartQueue** is an ACID-compliant, transaction-hardened Relational Database Management System (RDBMS). It enables classroom pre-ordering, provides real-time preparation time estimation, classifies menu items into turn-around tiers (e.g., `GRAB_AND_GO`), and enforces deterministic inventory checks via database-level triggers.
+**CampusBite** is an ACID-compliant, transaction-hardened Relational Database Management System (RDBMS). It enables classroom pre-ordering, provides real-time preparation time estimation, classifies menu items into turn-around tiers (e.g., `GRAB_AND_GO`), and enforces deterministic inventory checks via database-level triggers.
 
 ---
 
@@ -146,7 +146,7 @@ The project timeline is structured across three development sprints, dividing ta
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────┐
-│                        SMARTQUEUE SPRINT ROADMAP                       │
+│                        CAMPUSBITE SPRINT ROADMAP                       │
 ├────────────────────┬────────────────────┬──────────────────────────────┤
 │ Student 1          │ Student 2          │ Student 3                    │
 │ (Schema & Storage) │ (Engine & Triggers)│ (CLI App & Analytics)        │

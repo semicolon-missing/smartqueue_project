@@ -21,7 +21,7 @@ export default function Header() {
     <header className="topbar">
       <div className="container topbar-inner">
         <Link to="/" className="wordmark">
-          Smart<em>Queue</em>
+          Campus<em>Bite</em>
         </Link>
         <nav>
           {linksFor(user).map(([to, label]) => (

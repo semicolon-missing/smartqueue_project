@@ -17,7 +17,7 @@ async def lifespan(app):
     pool.close()
 
 
-app = FastAPI(title="SmartQueue", lifespan=lifespan)
+app = FastAPI(title="CampusBite", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,

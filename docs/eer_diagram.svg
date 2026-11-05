@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1270" viewBox="0 0 1900 1270" font-family="Helvetica, Arial, Liberation Sans, sans-serif">
-<title>SmartQueue EER Diagram</title>
+<title>CampusBite EER Diagram</title>
 <rect width="1900" height="1270" fill="#fff"/>
 <g transform="translate(20 0)">
 <line x1="68.2" y1="305.7" x2="300.0" y2="390.0" stroke="#5d5866" stroke-width="1.1"/>
@@ -54,7 +54,7 @@
 <path d="M332.7 653.9 Q349.5 662.5 349.8 643.6" fill="none" stroke="#1d1b21" stroke-width="1.5"/>
 <line x1="300.0" y1="580.0" x2="525.0" y2="705.0" stroke="#1d1b21" stroke-width="1.4"/>
 <path d="M418.9 657.5 Q437.7 656.5 428.6 640.0" fill="none" stroke="#1d1b21" stroke-width="1.5"/>
-<text x="40.0" y="40.0" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central" fill="#1d1b21">SmartQueue: EER Diagram</text>
+<text x="40.0" y="40.0" font-size="28" font-weight="700" text-anchor="start" dominant-baseline="central" fill="#1d1b21">CampusBite: EER Diagram</text>
 <text x="40.0" y="72.0" font-size="14" font-weight="400" text-anchor="start" dominant-baseline="central" fill="#5d5866">Generated from sql/01_schema.sql, 02_triggers.sql and 03_views.sql</text>
 <ellipse cx="68.2" cy="305.7" rx="42.7" ry="21" fill="#fff" stroke="#1d1b21" stroke-width="1.2"/>
 <text x="68.2" y="305.7" font-size="14" font-weight="600" text-anchor="middle" dominant-baseline="central" fill="#1d1b21" text-decoration="underline">user_id</text>

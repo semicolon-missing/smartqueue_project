@@ -38,7 +38,7 @@ export default function Landing() {
             <em>Collect</em> at the break.
           </h1>
           <p className="lede">
-            SmartQueue sends your order to the kitchen ahead of time, so it's ready when the lecture ends, not
+            CampusBite sends your order to the kitchen ahead of time, so it's ready when the lecture ends, not
             halfway through your break.
           </p>
           <div className="actions">
@@ -135,7 +135,7 @@ export default function Landing() {
 
       <footer className="container footer">
         <span className="wordmark small-mark">
-          Smart<em>Queue</em>
+          Campus<em>Bite</em>
         </span>
         <span className="muted">Campus café pre-ordering · Pay at pickup</span>
       </footer>

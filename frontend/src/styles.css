@@ -1207,13 +1207,13 @@ select:focus {
   color: var(--ink);
 }
 
-.progress li.done::before {
+.progress li.done::before,
+.progress li.current::before {
   border-color: var(--plum);
   background: var(--plum);
 }
 
 .progress li.current::before {
-  border-color: var(--plum);
   box-shadow: 0 0 0 4px var(--plum-wash);
 }
 
